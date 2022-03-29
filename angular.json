@@ -5,9 +5,10 @@
   "projects": {
     "demo": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:application": {
-          "strict": true
+      "i18n": {
+        "locales": {
+          "hi": "src/srclocale/messages.xlf",
+          "gu": "src/srclocale/message2.xlf"
         }
       },
       "root": "",
@@ -32,7 +33,7 @@
             "scripts": []
           },
           "configurations": {
-            "production": {
+            "production": { 
               "budgets": [
                 {
                   "type": "initial",
@@ -53,6 +54,12 @@
               ],
               "outputHashing": "all"
             },
+            "hi": {
+              "localize": ["hi"]
+            },
+            "gu": {
+              "localize": ["gu"]
+            },
             "development": {
               "buildOptimizer": false,
               "optimization": false,
@@ -70,9 +77,15 @@
             "production": {
               "browserTarget": "demo:build:production"
             },
+            "hi": {
+              "browserTarget": "demo:build:hi"
+            },
+            "gu": {
+              "browserTarget": "demo:build:gu"
+            },
             "development": {
               "browserTarget": "demo:build:development"
-            }
+            } 
           },
           "defaultConfiguration": "development"
         },
